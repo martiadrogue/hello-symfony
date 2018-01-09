@@ -140,6 +140,10 @@ and Css bootstrap are showed in website Bootstrapcdn [15], other resources for
 IE10 viewport hack are in github project [16]. To end with resources management
 remove debug purpose lines.
 
+## Templating todos
+
+In bootstrap documentation there is an example of table with Striped rows [17]
+
 [1]:  https://symfony.com/doc/3.4/setup.html
 [6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
 [7]:  https://symfony.com/doc/3.4/doctrine.html
@@ -152,3 +156,4 @@ remove debug purpose lines.
 [14]: https://getbootstrap.com/docs/3.3/getting-started/#examples-framework
 [15]: https://www.bootstrapcdn.com/
 [16]: https://github.com/jdrda/ie10-viewport-bug-workaround/
+[17]: https://getbootstrap.com/docs/3.3/css/#tables-striped
