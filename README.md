@@ -126,7 +126,7 @@ just send a Response.
 
 [src/AppBundle/Controller/TodoController.php]
 
-# Bootstrap Integration
+## Bootstrap Integration
 
 First open **Starter template** from Bootstrap web site [14], show HTML and copy
 all and paste it on the app/Resources/views/base.html.twig.
