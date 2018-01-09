@@ -126,6 +126,15 @@ just send a Response.
 
 [src/AppBundle/Controller/TodoController.php]
 
+# Bootstrap Integration
+
+First open **Starter template** from Bootstrap web site [14], show HTML and copy
+all and paste it on the app/Resources/views/base.html.twig.
+
+Now it's time for add twig blogs of the original base temple on new bootstrap
+code. Also add a title and a menu. And put content block inside two divs, .row
+and .col-md-12.
+
 [1]:  https://symfony.com/doc/3.4/setup.html
 [6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
 [7]:  https://symfony.com/doc/3.4/doctrine.html
@@ -135,3 +144,4 @@ just send a Response.
 [11]: https://symfony.com/doc/3.4/logging.html
 [13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
 [src/AppBundle/Controller/TodoController.php]: src/AppBundle/Controller/TodoController.php
+[14]: https://getbootstrap.com/docs/3.3/getting-started/#examples-framework
