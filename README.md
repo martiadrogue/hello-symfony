@@ -144,6 +144,12 @@ remove debug purpose lines.
 
 In bootstrap documentation there is an example of table with Striped rows [17]
 
+## Data
+
+MySQL config is stored in `app/config/parameters.yml`.
+
+Then create database `todolist`.
+
 [1]:  https://symfony.com/doc/3.4/setup.html
 [6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
 [7]:  https://symfony.com/doc/3.4/doctrine.html
