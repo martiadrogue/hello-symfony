@@ -229,6 +229,12 @@ New field name (press <return> to stop adding fields):
 
 ```
 
+And then persists changes into database
+
+```shell
+ php bin/console doctrine:schema:update --force
+ ```
+
 
 [1]:  https://symfony.com/doc/3.4/setup.html
 [6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
