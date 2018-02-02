@@ -150,6 +150,86 @@ MySQL config is stored in `app/config/parameters.yml`.
 
 Then create database `todolist`.
 
+
+```shell
+php bin/console doctrine:generate:entity
+
+
+  Welcome to the Doctrine2 entity generator
+
+
+
+This command helps you generate Doctrine2 entities.
+
+First, you need to give the entity name you want to generate.
+You must use the shortcut notation like AcmeBlogBundle:Post.
+
+The Entity shortcut name: AppBunde:Todo
+Bundle "AppBunde" does not exist.
+The Entity shortcut name: AppBundle:Todo
+
+Determine the format to use for the mapping information.
+
+Configuration format (yml, xml, php, or annotation) [annotation]:
+
+Instead of starting with a blank entity, you can add some fields now.
+Note that the primary key will be added automatically (named id).
+
+Available types: array, simple_array, json_array, object,
+boolean, integer, smallint, bigint, string, text, datetime, datetimetz,
+date, time, decimal, float, binary, blob, guid.
+
+New field name (press <return> to stop adding fields): name
+Field type [string]:
+Field length [255]:
+Is nullable [false]:
+Unique [false]:
+
+New field name (press <return> to stop adding fields): category
+Field type [string]:
+Field length [255]:
+Is nullable [false]:
+Unique [false]:
+
+New field name (press <return> to stop adding fields): description
+Field type [string]:
+Field length [255]:
+Is nullable [false]:
+Unique [false]:
+
+New field name (press <return> to stop adding fields): priority
+Field type [string]:
+Field length [255]:
+Is nullable [false]:
+Unique [false]:
+
+New field name (press <return> to stop adding fields): due_date
+Field type [string]: datetime
+Is nullable [false]:
+Unique [false]:
+
+New field name (press <return> to stop adding fields): create_date
+Field type [string]: datetime
+Is nullable [false]:
+Unique [false]:
+
+New field name (press <return> to stop adding fields):
+
+
+  Entity generation
+
+
+  created ./src/AppBundle/Entity/
+  created ./src/AppBundle/Entity/Todo.php
+> Generating entity class src/AppBundle/Entity/Todo.php: OK!
+> Generating repository class src/AppBundle/Repository/TodoRepository.php: OK!
+
+
+  Everything is OK! Now get to work :).
+
+```
+
+
 [1]:  https://symfony.com/doc/3.4/setup.html
 [6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
 [7]:  https://symfony.com/doc/3.4/doctrine.html
