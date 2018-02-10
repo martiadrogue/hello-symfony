@@ -237,6 +237,7 @@ And then persists changes into database
 
  Fetch data from database
 
+ Now it's time to create the form to edit and create tasks
 
 [1]:  https://symfony.com/doc/3.4/setup.html
 [6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
