@@ -235,6 +235,8 @@ And then persists changes into database
  php bin/console doctrine:schema:update --force
  ```
 
+ Fetch data from database
+
 
 [1]:  https://symfony.com/doc/3.4/setup.html
 [6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html

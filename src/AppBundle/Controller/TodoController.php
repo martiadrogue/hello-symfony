@@ -13,7 +13,11 @@ class TodoController extends Controller
      */
     public function listAction(Request $request)
     {
-        return $this->render('todos/index.html.twig');
+        $todos = $this->getDoctrine()
+            ->getRepository('AppBundle:Todo')
+            ->findAll();
+
+        return $this->render('todos/index.html.twig', ['todos' => $todos]);
     }
 
       /**
