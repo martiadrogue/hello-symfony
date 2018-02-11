@@ -28,7 +28,7 @@ class TodoController extends Controller
     }
 
       /**
-       * @Route("/todos/create", name="todo_create")
+       * @Route("/todo/create", name="todo_create")
        */
       public function createAction(Request $request)
       {
@@ -78,7 +78,7 @@ class TodoController extends Controller
 
 
       /**
-       * @Route("/todos/edit/{id}", name="todo_edit")
+       * @Route("/todo/edit/{id}", name="todo_edit")
        */
       public function editAction($id, Request $request)
       {
@@ -87,10 +87,16 @@ class TodoController extends Controller
       }
 
       /**
-       * @Route("/todos/details/{id}", name="todo_details")
+       * @Route("/todo/details/{id}", name="todo_details")
        */
-      public function detailsAction($id, Request $request)
+      public function detailsAction($id)
       {
-          return $this->render('todos/details.html.twig');
+          $todo = $this->getDoctrine()
+                    ->getRepository('AppBundle:Todo')
+                    ->find($id);
+
+          return $this->render('todos/details.html.twig', [
+              'todo' => $todo,
+          ]);
       }
 }
