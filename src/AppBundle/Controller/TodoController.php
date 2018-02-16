@@ -39,7 +39,7 @@ class TodoController extends Controller
               ->add('description', TextareaType::class, [ 'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px'] ])
               ->add('priority', ChoiceType::class, [ 'choices' => ['Low' => 'Low', 'Normal' => 'Normal', 'High' => 'High'], 'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px'] ])
               ->add('due_date', DateTimeType::class, [ 'attr' => ['class' => 'formcontrol', 'style' => 'margin-bottom:15px'] ])
-              ->add('save', SubmitType::class, [ 'label' => 'Create Todo', 'attr' => ['class' => 'btm btn-primary', 'style' => 'margin-bottom:15px'] ])
+              ->add('save', SubmitType::class, [ 'label' => 'Create Todo', 'attr' => ['class' => 'btn btn-primary', 'style' => 'margin-bottom:15px'] ])
               ->getForm();
 
           $form->handleRequest($request);
