@@ -82,7 +82,53 @@ class TodoController extends Controller
        */
       public function editAction($id, Request $request)
       {
-          return $this->render('todos/edit.html.twig');
+          $todo = $this->getDoctrine()
+                    ->getRepository('AppBundle:Todo')
+                    ->find($id);
+          $now = new DateTime('now');
+
+          $form = $this->createFormBuilder($todo)
+              ->add('name', TextType::class, [ 'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px'] ])
+              ->add('category', TextType::class, [ 'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px'] ])
+              ->add('description', TextareaType::class, [ 'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px'] ])
+              ->add('priority', ChoiceType::class, [ 'choices' => ['Low' => 'Low', 'Normal' => 'Normal', 'High' => 'High'], 'attr' => ['class' => 'form-control', 'style' => 'margin-bottom:15px'] ])
+              ->add('due_date', DateTimeType::class, [ 'attr' => ['class' => 'formcontrol', 'style' => 'margin-bottom:15px'] ])
+              ->add('save', SubmitType::class, [ 'label' => 'Update Todo', 'attr' => ['class' => 'btn btn-primary', 'style' => 'margin-bottom:15px'] ])
+              ->getForm();
+
+          $form->handleRequest($request);
+
+          if ($form->isSubmitted() && $form->isValid()) {
+              $name = $form['name']->getData();
+              $category = $form['category']->getData();
+              $description = $form['description']->getData();
+              $priority = $form['priority']->getData();
+              $dueDate = $form['due_date']->getData();
+
+              $em = $this->getDoctrine()->getManager();
+              $todo = $em->getRepository("AppBundle:Todo")->find($id);
+
+              $todo->setName($name);
+              $todo->setCategory($category);
+              $todo->setDescription($description);
+              $todo->setPriority($priority);
+              $todo->setDueDate($dueDate);
+              $todo->setCreateDate($now);
+
+              $em->flush();
+
+              $this->addFlash(
+                  'notice',
+                  'Todo Updated'
+              );
+
+              return $this->redirectToRoute('todo_list');
+          }
+
+          return $this->render('todos/edit.html.twig', [
+              'todo' => $todo,
+              'form' => $form->createView(),
+          ]);
 
       }
 
